@@ -187,6 +187,8 @@ def _unzip_file(filepath):
     """
 
     temp_dir = tempfile.mkdtemp()
+    LOG.info("Fixing permissions for %s", temp_dir)
+    os.chmod(temp_dir, 0o755)
 
     LOG.info("Decompressing %s", filepath)
 
